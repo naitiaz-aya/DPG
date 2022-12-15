@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1035407064058",
+    "project_id": "depannagelexus",
+    "storage_bucket": "depannagelexus.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1035407064058:android:b11d84ed20982fd7c10243",
+        "android_client_info": {
+          "package_name": "com.lexus.depannage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1035407064058-fiv0vn3vqco4c4vvmb07sanpvmms8rm5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lexus.depannage",
+            "certificate_hash": "a8bd64cf224528e6ebb4b63d6e887c6d157b2405"
+          }
+        },
+        {
+          "client_id": "1035407064058-dmnogtml8svot37qtobqr5jh19bamkhg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPoTknkWUG0M6PgrV82yu_1m1K4fWE1-g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1035407064058-dmnogtml8svot37qtobqr5jh19bamkhg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
