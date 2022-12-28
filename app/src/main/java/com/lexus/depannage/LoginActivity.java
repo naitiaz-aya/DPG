@@ -16,17 +16,19 @@ public class LoginActivity extends AppCompatActivity {
     Animation phoneAnimate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        phoneButton = (Button) findViewById(R.id.phone);
 
+        phoneButton = (Button) findViewById(R.id.phone);
         phoneAnimate = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.up2_animation);
         phoneButton.setAnimation(phoneAnimate);
+
     }
 
     public void phoneLoginClick(View view) {
-        Intent i = new Intent(LoginActivity.this, PhoneLoginActivity.class);
 
+        Intent i = new Intent(LoginActivity.this, PhoneLoginActivity.class);
         startActivity(i);
 
     }

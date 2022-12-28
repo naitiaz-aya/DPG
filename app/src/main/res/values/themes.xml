@@ -14,4 +14,13 @@
         <!-- Customize your theme here. -->
         <item name="android:windowDisablePreview">true</item>
     </style>
+
+    <style name="Theme.Depannage.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Depannage.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Depannage.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
