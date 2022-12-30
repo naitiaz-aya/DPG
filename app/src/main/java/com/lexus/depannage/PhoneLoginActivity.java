@@ -207,18 +207,19 @@ public class PhoneLoginActivity extends AppCompatActivity {
                                         Users body = response.body();
                                         Integer code = response.code();
 
-
-
                                         if(body.getResponse().equals("already")){
                                             sessionManager.createSession(device_token, "user", phoneEdittext.getText().toString(), "+212");
                                             Log.e("AAA","Already");
+
                                             Intent i = new Intent(PhoneLoginActivity.this, HomeActivity.class);
+                                            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                             startActivity(i);
                                             finish();
                                         } else if(body.getResponse().equals("new")){
                                             sessionManager.createSession(device_token, "user", phoneEdittext.getText().toString(), "+212");
                                             Log.e("AAA","New");
                                             Intent i = new Intent(PhoneLoginActivity.this, EditUserProfileActivity.class);
+                                            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                             startActivity(i);
                                             finish();
                                         }
@@ -226,12 +227,14 @@ public class PhoneLoginActivity extends AppCompatActivity {
                                             Log.e("AAA","failed");
                                             Toast.makeText(PhoneLoginActivity.this, "Login is Failed", Toast.LENGTH_SHORT).show();
                                             Intent i = new Intent(PhoneLoginActivity.this, LoginActivity.class);
+                                            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                             startActivity(i);
                                             finish();
                                         }
                                         else{
                                             Toast.makeText(PhoneLoginActivity.this, "Login was Failed", Toast.LENGTH_SHORT).show();
                                             Intent i = new Intent(PhoneLoginActivity.this, LoginActivity.class);
+                                            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                             startActivity(i);
                                             finish();
                                         }
@@ -245,6 +248,7 @@ public class PhoneLoginActivity extends AppCompatActivity {
                                     Toast.makeText(PhoneLoginActivity.this, "rja3", Toast.LENGTH_SHORT).show();
                                     Log.e("error", "Failure : " + t.toString());
                                     Intent i = new Intent(PhoneLoginActivity.this, LoginActivity.class);
+                                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                     startActivity(i);
                                     finish();
                                 }
@@ -252,7 +256,11 @@ public class PhoneLoginActivity extends AppCompatActivity {
 
 
                         }else{
+                            Toast.makeText(PhoneLoginActivity.this, "rja3", Toast.LENGTH_SHORT).show();
 
+                            Intent i = new Intent(PhoneLoginActivity.this, LoginActivity.class);
+                            startActivity(i);
+                            finish();
                         }
                     }
                 });
@@ -286,7 +294,17 @@ public class PhoneLoginActivity extends AppCompatActivity {
                   Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show();
               }
           }
+
+
+
       }
   }
 
+
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(PhoneLoginActivity.this, LoginActivity.class);
+        startActivity(i);
+        finish();
+    }
 }

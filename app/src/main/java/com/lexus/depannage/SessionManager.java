@@ -35,6 +35,10 @@ public class SessionManager {
         editor.apply();
     }
 
+    public boolean isLogin(){
+        return  sharedPreferences.getBoolean(LOGIN,false);
+    }
+
     public HashMap<String, Object> getUsersDetails(){
         HashMap<String, Object> user = new HashMap<>();
         user.put(USER_ID,sharedPreferences.getString(USER_ID, null));

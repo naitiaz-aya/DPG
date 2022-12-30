@@ -14,6 +14,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private Button phoneButton;
     Animation phoneAnimate;
+    private SessionManager sessionManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -23,6 +25,13 @@ public class LoginActivity extends AppCompatActivity {
         phoneButton = (Button) findViewById(R.id.phone);
         phoneAnimate = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.up2_animation);
         phoneButton.setAnimation(phoneAnimate);
+        sessionManager = new SessionManager(this);
+
+        if(sessionManager.isLogin()){
+            Intent i = new Intent(LoginActivity.this, HomeActivity.class);
+            startActivity(i);
+            finish();
+        }
 
     }
 
